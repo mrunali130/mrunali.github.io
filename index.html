@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrunali Tamhankar - Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Mrunali Tamhankar</h1>
+        <p>Email: mrunali1309@gmail.com | Phone: +91-9321640052</p>
+        <p>
+            <a href="http://linkedin.com/in/mrunali-tamhankar-25050026b" class="text-white">LinkedIn</a> |
+            <a href="https://github.com/mrunali130" class="text-white">GitHub</a>
+        </p>
+    </header>
+
+    <!-- About Section -->
+    <section class="container my-3">
+        <h2>About</h2>
+        <p>A focused and goal-driven engineering student with hands-on experience in programming, web development, and leadership roles. Passionate about continuous learning and committed to enhancing my technical skill set and contributing to impactful projects.</p>
+    </section>
+
+    <!-- Education Section -->
+    <section class="container my-3">
+        <h2>Education</h2>
+        <ul class="list-unstyled">
+            <li><strong>Parle Tilak Vidyalaya English Medium School</strong> - SSC (2019-2020): 91.40%</li>
+            <li><strong>Sathaye College</strong> - HSC (2021-2022): 65.17%</li>
+            <li><strong>Fr. Conceicao Rodrigues College of Engineering</strong>, Mumbai (2022-Present): CGPA 7.5/10</li>
+        </ul>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="container my-3">
+        <h2>Key Projects and Research</h2>
+        <ul class="list-unstyled">
+            <li><strong>Canteen Website Development:</strong> Developed a user-friendly website for the College canteen using HTML and CSS.</li>
+            <li><strong>Python Mini Project:</strong> Created a control panel for computer operations including shutdown, restart, and logout.</li>
+        </ul>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="container my-3">
+        <h2>Technical Skills</h2>
+        <p><strong>Experienced:</strong> C, HTML, CSS, SQL, Python</p>
+        <p><strong>Familiar:</strong> Java, JavaScript, System Verilog</p>
+    </section>
+
+    <!-- Positions of Responsibility -->
+    <section class="container my-3">
+        <h2>Positions of Responsibility</h2>
+        <ul class="list-unstyled">
+            <li><strong>Student Mentor:</strong> Mentoring second-year students in academics and programming.</li>
+            <li><strong>Junior PR Head, IEEE:</strong> Managed communications and promoted events through strategic outreach (2023-2024).</li>
+            <li><strong>Vice Chairperson, IEEE:</strong> Current Vice Chairperson of IEEE (2024-present).</li>
+        </ul>
+    </section>
+
+    <!-- Certificates -->
+    <section class="container my-3">
+        <h2>Certificates</h2>
+        <ul class="list-unstyled">
+            <li>Smart India Hackathon Winner 2023</li>
+            <li>AI-ML Project-Based Training from Academy of Skill Development</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-3">
+        <div class="container">
+            <h2 class="text-center">Contact</h2>
+            <form name="submit-to-google-sheet" id="contact-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+    </section>
+  
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzN3NiqS27R7MiuMn11jlSJzBI_vajYhprDFXS_zfxmEbs06RtpJvruVpL27IxDYDlc7A/exec'; // Replace with your Apps Script URL
+        const form = document.forms['submit-to-google-sheet'];
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && message) {
+                fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form),
+                })
+                .then(response => {
+                    alert('Your message has been sent successfully!');
+                    form.reset();
+                })
+                .catch(error => {
+                    alert('Something went wrong, please try again later!');
+                    console.error('Error!', error.message);
+                });
+            } else {
+                alert('Please fill out all fields before submitting.');
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="text-center py-2 bg-light">
+        <p>&copy; 2024 Mrunali Tamhankar</p>
+        <a href="C:\Users\Mrunali Tamhankar\OneDrive\Desktop\college stuff\SEM 5\SEWT\portfolio\R-Mrunali Tamhankar.pdf" class="btn btn-primary mt-2" download>Download Resume</a>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
